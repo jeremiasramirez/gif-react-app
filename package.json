@@ -10,7 +10,8 @@
     "page": "^1.11.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
+    "react-scripts": "3.4.4",
+    "rxjs": "^6.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
