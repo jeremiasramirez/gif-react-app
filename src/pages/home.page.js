@@ -1,43 +1,38 @@
 import React,{useState,useEffect} from 'react'
 import {ajax} from "rxjs/ajax"
-import {pluck} from "rxjs/operators"
-import Card from "@material-ui/core/Card"
-import CardHeader from "@material-ui/core/CardHeader"
- 
+import {delay, pluck} from "rxjs/operators"
+import CardGif from "../components/card/card.component"
+import Skeletons from '../components/skeleton/skeleton.card' 
 
-let url = "http://api.giphy.com/v1/gifs/trending?api_key=BMCs8nTHGEanLpXffXxB9Im4hMuTCTPh"
- 
+const url = "http://api.giphy.com/v1/gifs/trending?api_key=BMCs8nTHGEanLpXffXxB9Im4hMuTCTPh"
+ //api.giphy.com/v1/gifs/search?q=q?api_key=;
 const Home = ()=>{
-    
-   /* useEffect(()=>{
-        console.log("hola")
-    })*/
-   const [data,setData] = useState([]);
+    const [data,setData] = useState([]);
+    const [loading, setLoading] = useState(false)
+     
+   useEffect(()=>{
+        changeState()
+    },[])
 
-   const changeState = () =>{
-        ajax.get(url).pipe(pluck("response","data")).subscribe((e)=>{
-            setData(e);
-        })
-   }
    
+   
+   const changeState = () =>{
+    
+        ajax.get(url).pipe(pluck("response","data"),delay(2000)).subscribe((resp)=>{
+                
+            setData(resp);
+             
+        }, ()=>{return},()=>{ setLoading(true) })
+        
+   }
   
     return <div>
-        <button onClick={()=>changeState()}>Load</button>
-            
-            <section  className="containerGifs">  
-                { 
-                    data.map((gif,key)=>{
-                        return gif.images.downsized.url ? <Card className="cardGif animate" key={key}>
-                        <CardHeader title={gif.title.substring(0,15)}></CardHeader>
-                        <img src={gif.images.downsized.url} alt="gifs image"></img>
-                    </Card> :null
-                    }) 
-                
-                } 
-                
-            </section>
-
-    
+        
+        <section className="containerGifs">
+            {
+                loading === false ? <Skeletons /> : <CardGif data={data}/>
+            }
+        </section>
     </div>
 
 }
