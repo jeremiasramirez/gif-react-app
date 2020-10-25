@@ -1,10 +1,8 @@
 import React,{useState,useEffect} from 'react'
-import {ajax} from "rxjs/ajax"
-import {delay, pluck} from "rxjs/operators"
 import CardGif from "../components/card/card.component"
 import Skeletons from '../components/skeleton/skeleton.card' 
+import getGifs from '../services/gif.service'
 
-const url = "http://api.giphy.com/v1/gifs/trending?api_key=BMCs8nTHGEanLpXffXxB9Im4hMuTCTPh"
  //api.giphy.com/v1/gifs/search?q=q?api_key=;
 const Home = ()=>{
     const [data,setData] = useState([]);
@@ -18,7 +16,7 @@ const Home = ()=>{
    
    const changeState = () =>{
     
-        ajax.get(url).pipe(pluck("response","data"),delay(2000)).subscribe((resp)=>{
+    getGifs().subscribe((resp)=>{
                 
             setData(resp);
              
