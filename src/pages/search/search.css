@@ -1,0 +1,28 @@
+.containersearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+     
+   
+}
+.containersearch__input{
+   
+    padding:8px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    margin:15px;
+    text-align:center !important;
+    font-size:16px;
+    font-family: sans-serif;
+}
+.buttonSearch{
+    width: 150px !important;
+
+    background:  #eee !important;
+}
+.fieldSearch{
+
+    margin-bottom: 12px !important;
+    width: 90% !important;
+}
