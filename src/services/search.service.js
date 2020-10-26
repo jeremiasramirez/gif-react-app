@@ -1,9 +1,9 @@
 import {ajax} from "rxjs/ajax"
 import {delay, pluck} from "rxjs/operators"
 
-const searchGif = () =>{
-    const urlSearch = `http://api.giphy.com/v1/gifs/search?api_key=BMCs8nTHGEanLpXffXxB9Im4hMuTCTPh&q=marvel&limit=10`;
-    return ajax.get(urlSearch).pipe(pluck("response","data"),delay(2000))
+const SearchGif = (title) =>{
+    const urlSearch = `http://api.giphy.com/v1/gifs/search?api_key=BMCs8nTHGEanLpXffXxB9Im4hMuTCTPh&q=${title}&limit=10`;
+    return ajax.get(urlSearch).pipe(pluck("response","data"),delay(300))
 }
-export default searchGif
+export default SearchGif
  

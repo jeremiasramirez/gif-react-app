@@ -52,7 +52,8 @@ body,html{
 }
 
 .animate{
-  animation: animateIn .6s ease-in
+  transition:1s;
+  animation: animateIn .6s  ease-in
 }
 @keyframes animateIn{
   from{
@@ -62,7 +63,22 @@ body,html{
     opacity: 1;
   }
 }
+.animateOut{
+  animation: animateOuts .2s linear;
+  transition:1s;
 
+}
+@keyframes animateOuts{
+  from{
+      transform:scale(.9);
+      opacity: .4;
+      
+  }
+  to{
+      transform:scale(1);
+      opacity: .4;
+  }
+}
 .containerGifs{
   display:flex;
   justify-content: center;
