@@ -126,3 +126,14 @@ body{
     opacity:.9;
   }
 }
+
+img{
+  width: inherit;
+  height:inherit;
+}
+.centerTitle{
+  text-align:center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(139, 58, 78);
+  font-weight: 600;
+}
