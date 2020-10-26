@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Menu from '../../components/menu/menu.component'
 import "./search.css"
 import Button from '@material-ui/core/Button'
@@ -12,11 +12,17 @@ const SearchPage = () =>{
     const [textInput,setTextInput] = useState('');
     const [loading,setLoading] = useState(true);
 
+    useEffect(()=>{
 
+        return ()=> {
+            execHttp().unsubscribe()
+        }
+
+    }, [])
     const execHttp = (title)=>{
         setLoading(false)
 
-        SearchGif(title).subscribe((resp)=>{
+        return SearchGif(title).subscribe((resp)=>{
             setFinded(resp)
         } , ()=>{}, ()=>{setLoading(true)})
     }
@@ -29,11 +35,11 @@ const SearchPage = () =>{
     return <>
             <Menu />
 
-            <section className="containersearch">
+            <section className="containersearch animate">
                  <TextField id="standard-basic" variant="outlined" onChange={(e)=>setTextInput(e.target.value.trim()) } label="Search" className="fieldSearch" />
                 
                 <article>
-                    <Button className="buttonSearch" onClick={()=>execSearch()} color="primary">Ok</Button>
+                    <Button disabled={textInput.length < 1} className="buttonSearch" onClick={()=>execSearch()} color="primary">Ok</Button>
                 </article>
 
                 <section className="containerGifs animate animateOut">

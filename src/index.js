@@ -27,4 +27,8 @@ page('/home/categories', ()=>{
   ReactDOM.render( <CategoryPage />,  document.getElementById('rootPage') );
 })
 
+page('*', ()=>{
+  ReactDOM.render(<App />, document.getElementById('rootPage'));
+})
+
 page();

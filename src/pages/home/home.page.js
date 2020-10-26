@@ -3,25 +3,28 @@ import CardGif from "../../components/card/card.component"
 import Skeletons from '../../components/skeleton/skeleton.card' 
 import getGifs from '../../services/gif.service'
 import Menu from '../../components/menu/menu.component'
-
-
-
-
-
+ 
 
 const Home = ()=>{
-
+    
     const [data,setData] = useState([]);
     const [loading, setLoading] = useState(false)
      
    useEffect(()=>{
         changeState()
+        
+        //stop subscription
+        return ()=>{
+           changeState().unsubscribe()
+        }
     },[])
    
    const changeState = () =>{
-        getGifs().subscribe((resp)=>{
+        
+      return getGifs().subscribe((resp)=>{
             setData(resp);
         }, ()=>{return},()=>{ setLoading(true) })
+         
    }
   
     return <div>

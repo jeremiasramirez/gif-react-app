@@ -12,12 +12,6 @@ const Skeletons = () =>{
             <article className="SkeletonCard animateSkeleton"></article>
             <article className="SkeletonCard animateSkeleton"></article>
             <article className="SkeletonCard animateSkeleton"></article>
-            <article className="SkeletonCard animateSkeleton"></article>
-            <article className="SkeletonCard animateSkeleton"></article>
-            <article className="SkeletonCard animateSkeleton"></article>
-             <article className="SkeletonCard animateSkeleton"></article>
-             <article className="SkeletonCard animateSkeleton"></article>
-             <article className="SkeletonCard animateSkeleton"></article>
     </section>
     </div>
 }
