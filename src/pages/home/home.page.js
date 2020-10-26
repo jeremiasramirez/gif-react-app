@@ -1,8 +1,14 @@
 import React,{useState,useEffect} from 'react'
-import CardGif from "../components/card/card.component"
-import Skeletons from '../components/skeleton/skeleton.card' 
-import getGifs from '../services/gif.service'
- 
+import CardGif from "../../components/card/card.component"
+import Skeletons from '../../components/skeleton/skeleton.card' 
+import getGifs from '../../services/gif.service'
+import Menu from '../../components/menu/menu.component'
+
+
+
+
+
+
 const Home = ()=>{
 
     const [data,setData] = useState([]);
@@ -19,6 +25,7 @@ const Home = ()=>{
    }
   
     return <div>
+            <Menu />
             <h1 className="centerTitle">Trending gifs</h1>
             <section className="containerGifs">  
             {

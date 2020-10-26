@@ -1,0 +1,13 @@
+.headerMenu{
+    padding: 1px 0;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-bottom: 50px;
+    text-align:right;
+    background-color: rgb(125, 21, 194);
+
+}
+.headerMenu a{
+    color: white;
+    text-decoration: none;
+}
