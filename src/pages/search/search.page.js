@@ -36,13 +36,17 @@ const SearchPage = () =>{
             <Menu />
 
             <section className="containersearch animate">
-                 <TextField id="standard-basic" variant="outlined" onChange={(e)=>setTextInput(e.target.value.trim()) } label="Search" className="fieldSearch" />
+                 <TextField type="search" id="standard-basic" variant="outlined" onChange={(e)=>setTextInput(e.target.value.trim()) } label="Search" className="fieldSearch" />
                 
                 <article>
-                    <Button disabled={textInput.length < 1} className="buttonSearch" onClick={()=>execSearch()} color="primary">Ok</Button>
+                    <Button value={textInput} disabled={textInput.length < 1} className="buttonSearch" onClick={()=>execSearch()} color="primary">Ok</Button>
+                    {
+                        finded.length > 0 ? <Button className="animateOut" color="secondary" onClick={()=>{setFinded([])}}>Clear</Button> : null 
+                    }
                 </article>
 
                 <section className="containerGifs animate animateOut">
+
                     {
                         loading === false ? <Skeletons /> : <CardGif  data={finded}/>
                     }
