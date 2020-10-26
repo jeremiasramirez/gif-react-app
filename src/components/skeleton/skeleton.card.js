@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 const Skeletons = () =>{
     return <div >
         <section className="loadingContainer animate" >
-            <CircularProgress color="secondary"></CircularProgress> 
+            <CircularProgress color="primary"></CircularProgress> 
         </section>
 
         <section className="containerSkeleton animate">
