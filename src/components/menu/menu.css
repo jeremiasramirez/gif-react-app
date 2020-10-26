@@ -3,11 +3,27 @@
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
     margin-bottom: 50px;
-    text-align:right;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(125, 21, 194);
 
 }
 .headerMenu a{
     color: white;
     text-decoration: none;
+}
+.iconImg img{
+    width: 40px;
+    animation: rotateImgMenu 1s linear;
+}
+@keyframes rotateImgMenu{
+    from{
+        opacity: .6;
+        transform: rotate(-60deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotate(0);
+    }
 }

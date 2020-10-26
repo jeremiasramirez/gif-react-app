@@ -5,6 +5,10 @@ import Button from '@material-ui/core/Button'
 const Menu = ()=>{
 
     return <header className="headerMenu ">
+            <article className="iconImg">
+                <img src="/images/gif.svg" alt="icon"></img>
+      
+            </article>
             <ul>
                 <Button><a  href="/home">Home</a> </Button> 
                 <Button><a  href="/home/categories">Categories</a> </Button> 
