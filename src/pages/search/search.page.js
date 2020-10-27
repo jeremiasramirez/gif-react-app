@@ -74,7 +74,7 @@ const SearchPage = () =>{
             <section>
             <article className="containerSugestions">
                 {
-                    sugestions.map((sugest,key)=>{
+                    !finded.length || !loading ? sugestions.map((sugest,key)=>{
                         {
                            return <Chip
                                 className="animate"
@@ -84,7 +84,7 @@ const SearchPage = () =>{
                                 onClick={()=>{execHttp(sugest)}} 
                             />
                         }
-                    })
+                    })  : null
                 }
             </article>
             </section>
