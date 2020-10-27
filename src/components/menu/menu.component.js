@@ -1,6 +1,9 @@
 import React from 'react'
 import "./menu.css"
 import Button from '@material-ui/core/Button'
+import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
+import FilterListIcon from '@material-ui/icons/FilterList';
 
 const Menu = ()=>{
 
@@ -10,9 +13,9 @@ const Menu = ()=>{
       
             </article>
             <ul>
-                <Button><a  href="/home">Home</a> </Button> 
-                <Button><a  href="/home/categories">Categories</a> </Button> 
-                <Button><a  href="/home/search">Search</a> </Button> 
+                <Button><a  href="/home"><HomeIcon /></a> </Button> 
+                <Button><a  href="/home/categories"><FilterListIcon /></a> </Button> 
+                <Button><a  href="/home/search"><SearchIcon/></a> </Button> 
             </ul>
         </header>
 

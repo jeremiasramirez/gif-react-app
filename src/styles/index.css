@@ -75,7 +75,7 @@ body,html{
 
 .animate{
   transition:1s;
-  animation: animateIn .6s  ease-in
+  animation: animateIn .7s  ease-in
 }
 @keyframes animateIn{
   from{

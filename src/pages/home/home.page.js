@@ -29,7 +29,7 @@ const Home = ()=>{
   
     return <div>
             <Menu />
-            <h1 className="centerTitle">Trending gifs</h1>
+            <h1 className="centerTitle animate">Trending gifs</h1>
             <section className="containerGifs">  
             {
                 loading === false ? <Skeletons /> : <CardGif data={data}/>

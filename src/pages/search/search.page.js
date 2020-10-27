@@ -4,32 +4,53 @@ import "./search.css"
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import SearchGif from '../../services/search.service'
+import getSugestion from '../../services/sugestionSearch.service'
 import CardGif from "../../components/card/card.component"
 import Skeletons from '../../components/skeleton/skeleton.card' 
+import Chip from '@material-ui/core/Chip';
 
 const SearchPage = () =>{
     const [finded,setFinded ] = useState([]);
     const [textInput,setTextInput] = useState('');
     const [loading,setLoading] = useState(true);
+    const [sugestions, setSugestion] = useState([])
+
+
 
     useEffect(()=>{
+        execSugestion();
 
         return ()=> {
             execHttp().unsubscribe()
         }
 
     }, [])
+
+
+
     const execHttp = (title)=>{
         setLoading(false)
 
         return SearchGif(title).subscribe((resp)=>{
             setFinded(resp)
         } , ()=>{}, ()=>{setLoading(true)})
+
     }
+
+
 
     const execSearch = ()=>{
         if (textInput.length) execHttp(textInput)
     }
+
+
+
+    const execSugestion = ()=>{
+        return getSugestion().subscribe((resp)=>{
+            setSugestion(resp)
+        })
+    }
+
 
 
     return <>
@@ -44,13 +65,28 @@ const SearchPage = () =>{
                         finded.length > 0 ? <Button className="animateOut" color="secondary" onClick={()=>{setFinded([])}}>Clear</Button> : null 
                     }
                 </article>
-
-                <section className="containerGifs animate animateOut">
-
+                <article className="containerGifs animate animateOut">
                     {
                         loading === false ? <Skeletons /> : <CardGif  data={finded}/>
                     }
-                </section>
+                </article>
+            </section>
+            <section>
+            <article className="containerSugestions">
+                {
+                    sugestions.map((sugest,key)=>{
+                        {
+                           return <Chip
+                                className="animate"
+                                key={key}
+                                label={sugest}
+                                clickable
+                                onClick={()=>{execHttp(sugest)}} 
+                            />
+                        }
+                    })
+                }
+            </article>
             </section>
         </>
 
