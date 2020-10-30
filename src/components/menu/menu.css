@@ -3,13 +3,16 @@
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
     margin-bottom: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display:flex;
     justify-content: space-between;
     align-items: center;
     /* background-color: rgb(125, 21, 194); */
-    background-image: linear-gradient(to right, rgb(125, 21, 194) 60%,rgb(199, 29, 134))
+    background-image: linear-gradient(to right, rgba(117, 16, 185, 0.945) 60%,rgba(155, 13, 101, 0.856))
 }
-.headerMenu a{
+.headerMenu a{ 
     color: white;
     text-decoration: none;
 }
