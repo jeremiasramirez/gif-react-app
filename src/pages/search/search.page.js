@@ -1,58 +1,33 @@
-import React,{useEffect, useState} from 'react'
+import React,{ useState} from 'react'
 import Menu from '../../components/menu/menu.component'
 import "./search.css"
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import SearchGif from '../../services/search.service'
-import getSugestion from '../../services/sugestionSearch.service'
 import CardGif from "../../components/card/card.component"
 import Skeletons from '../../components/skeleton/skeleton.card' 
-import Chip from '@material-ui/core/Chip';
+ 
+
+const execHttp = (title,setLoading,setFinded)=>{
+    setLoading(false)
+
+    return SearchGif(title).subscribe((resp)=>{
+        setFinded(resp)
+    } , ()=>{}, ()=>{setLoading(true)})
+
+}
 
 const SearchPage = () =>{
     const [finded,setFinded ] = useState([]);
     const [textInput,setTextInput] = useState('');
     const [loading,setLoading] = useState(true);
-    const [sugestions, setSugestion] = useState([])
-
-
-
-    useEffect(()=>{
-        execSugestion();
-
-        return ()=> {
-            execHttp().unsubscribe()
-        }
-
-    }, [])
-
-
-
-    const execHttp = (title)=>{
-        setLoading(false)
-
-        return SearchGif(title).subscribe((resp)=>{
-            setFinded(resp)
-        } , ()=>{}, ()=>{setLoading(true)})
-
-    }
-
-
-
+   
+ 
     const execSearch = ()=>{
-        if (textInput.length) execHttp(textInput)
+        if (textInput.length) execHttp(textInput,setLoading,setFinded);
     }
 
-
-
-    const execSugestion = ()=>{
-        return getSugestion().subscribe((resp)=>{
-            setSugestion(resp)
-        })
-    }
-
-
-
+  
     return <>
             <Menu />
 
@@ -71,23 +46,7 @@ const SearchPage = () =>{
                     }
                 </article>
             </section>
-            <section>
-            <article className="containerSugestions">
-                {
-                    !finded.length || !loading ? sugestions.map((sugest,key)=>{
-                        {
-                           return <Chip
-                                className="animate"
-                                key={key}
-                                label={sugest}
-                                clickable
-                                onClick={()=>{execHttp(sugest)}} 
-                            />
-                        }
-                    })  : null
-                }
-            </article>
-            </section>
+ 
         </>
 
 

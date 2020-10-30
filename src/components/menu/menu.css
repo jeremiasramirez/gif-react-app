@@ -6,8 +6,8 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(125, 21, 194);
-
+    /* background-color: rgb(125, 21, 194); */
+    background-image: linear-gradient(to right, rgb(125, 21, 194) 60%,rgb(199, 29, 134))
 }
 .headerMenu a{
     color: white;

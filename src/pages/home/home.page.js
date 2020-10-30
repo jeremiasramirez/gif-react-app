@@ -4,6 +4,12 @@ import Skeletons from '../../components/skeleton/skeleton.card'
 import getGifs from '../../services/gif.service'
 import Menu from '../../components/menu/menu.component'
  
+const changeState = (setData,setLoading) =>{
+  return  getGifs().subscribe((resp)=>{
+        setData(resp);
+    }, ()=>{return},()=>{ setLoading(true) })
+}
+
 
 const Home = ()=>{
     
@@ -11,21 +17,13 @@ const Home = ()=>{
     const [loading, setLoading] = useState(false)
      
    useEffect(()=>{
-        changeState()
+        changeState(setData,setLoading)
         
         //stop subscription
-        return ()=>{
-           changeState().unsubscribe()
-        }
-    },[])
-   
-   const changeState = () =>{
-        
-      return getGifs().subscribe((resp)=>{
-            setData(resp);
-        }, ()=>{return},()=>{ setLoading(true) })
+        return ()=> changeState(setData,setLoading).unsubscribe();
          
-   }
+    },[])
+
   
     return <div>
             <Menu />
