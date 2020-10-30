@@ -18,7 +18,6 @@ const Home = ()=>{
      
    useEffect(()=>{
         changeState(setData,setLoading)
-        
         //stop subscription
         return ()=> changeState(setData,setLoading).unsubscribe();
          

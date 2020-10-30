@@ -7,14 +7,30 @@
     top: 0;
     z-index: 10;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
     align-items: center;
-    /* background-color: rgb(125, 21, 194); */
-    background-image: linear-gradient(to right, rgba(117, 16, 185, 0.945) 60%,rgba(155, 13, 101, 0.856))
+    background-image: linear-gradient(to right, rgba(117, 16, 185, 0.945) 50%,rgba(155, 13, 101, 0.856))
 }
+ 
 .headerMenu a{ 
     color: white;
     text-decoration: none;
+}
+@media screen and (max-width: 330px){
+    .headerMenu .iconImg{
+        width: 20px;
+        /* display: none !important; */
+    }
+    .headerMenu ul Button{
+        margin:0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        transform: scale(.7) !important; 
+       
+    }
+    .iconImg img{
+        margin:0 !important;
+    }
 }
 .iconImg img{
     width: 40px;
