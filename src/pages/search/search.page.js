@@ -1,5 +1,4 @@
 import React,{ useState} from 'react'
-import Menu from '../../components/menu/menu.component'
 import "./search.css"
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
@@ -29,8 +28,6 @@ const SearchPage = () =>{
 
   
     return <>
-            <Menu />
-
             <section className="containersearch animate">
                  <TextField type="search" id="standard-basic" variant="outlined" onChange={(e)=>setTextInput(e.target.value.trim()) } label="Search" className="fieldSearch" />
                 
