@@ -4,23 +4,79 @@
     position: fixed;
     z-index: 20;
     background-color: rgba(3, 2, 2, 0.897);
-    
+    animation: outs .4s linear;
+}
+ 
+@keyframes outs{
+    from{
+         
+        opacity: 0;
+        border-radius:30%;
+    }
+    to{
+       
+        opacity: 1;
+        border-radius:0%;
+    }
 }
 
 .containerTitle{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
-    font-size:18px;
-    padding: 10px;
-    color: #eee;
+    font-size:20px;
+    margin-top:40px;
+    margin-bottom:40px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
 }
 
 .containerImage{
     width: 100%;
+    margin-top:10px;
     text-align: center;
 }
 .imageGif{
+    max-height: 500px;
     max-width: 550px;
+    height: 100%;
+    
+    border-radius: 7px;
      
+}
+
+
+.containerClose{
+    color: white;
+    transition:.1s;
+    position: absolute;
+    right:7px;
+    font-weight: 600;
+    cursor:pointer;
+    padding:5px 10px;
+    border-radius:50%;
+    background-color: rgb(196, 26, 145);
+    font-size:22px;
+    font-family: sans-serif;
+    top:5px;
+}
+.containerClose:hover{
+    transform:scale(1.1);
+}
+
+.closeOut {
+    animation: closeOut .4s linear;
+}
+@keyframes closeOut{
+    from{
+        transform:scale(1);
+        transform-origin: bottom left;
+    }
+    to{
+        transform:scale(0);
+        transform-origin: bottom left;
+        opacity: 0;
+        border-radius: 100%;
+    }
 }
