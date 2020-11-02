@@ -1,0 +1,23 @@
+.containerSkeleton{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+  }
+  .loadingContainer{
+    display:flex;
+    margin: 10px 0 20px  0; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+   
+  .SkeletonCard{
+    margin: 8px;
+    width: 240px;
+    border-radius:7px;
+    background-color: rgb(224, 220, 220);
+    height: 200px;
+  }
+  
+  

@@ -2,7 +2,7 @@ import React from 'react'
 import Card from "@material-ui/core/Card"
 import CardHeader from "@material-ui/core/CardHeader"
 import ScreenGif from '../screengif/screen.component'
-
+import './card.component.css'
 
 const handleScreen = (title,img)=>{
     ScreenGif(title,img)

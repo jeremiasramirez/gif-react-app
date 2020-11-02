@@ -18,6 +18,7 @@ body,html{
   display:flex;
   justify-content: center;
 }
+ 
 .headerGiff h4{
   margin:0;
   margin-top: -10px;
@@ -109,39 +110,10 @@ body,html{
   flex-wrap:wrap;
 }
 
-.cardGif{
-  width: 250px;
-  margin: 10px;
-  height: 250px
-}
 
 .separateLoading{
   margin: 20%;
 }
-.containerSkeleton{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap:wrap;
-}
-.loadingContainer{
-  display:flex;
-  margin: 10px 0 20px  0; 
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
- 
-.SkeletonCard{
-  margin: 8px;
-  width: 240px;
-  border-radius:7px;
-  background-color: rgb(224, 220, 220);
-  height: 200px;
-}
-
-
-
 
 .animateSkeleton{
   animation: animateSkeletons 1.5s infinite ease-in-out;

@@ -1,6 +1,7 @@
 import  React  from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress'
- 
+import './skeleton.card.css'
+
 const Skeletons = () =>{
     return <div >
         <section className="loadingContainer animate" >

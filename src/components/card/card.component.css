@@ -1,0 +1,13 @@
+
+
+.cardGif{
+    width: 250px;
+    margin: 10px;
+    height: 250px
+  }
+  .cardGif:hover{
+    cursor:pointer !important;
+    transform: translateY(-2px);
+    transition: .5s;
+    background: rgba(22, 19, 20, 0.048);
+  }
