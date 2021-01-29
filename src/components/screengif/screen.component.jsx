@@ -2,8 +2,8 @@ import CreateView from './screen.class'
 
 const ScreenGif = (title,img)=>{
 
-    let instance =new CreateView(title, img);
-    instance.createView();
+    let instanceCreateView =new CreateView(title, img);
+    instanceCreateView.createView();
  
 }
 

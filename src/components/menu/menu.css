@@ -5,7 +5,7 @@
     margin-bottom: 20px;
     position: sticky;
     top: 0;
-    height: 60px;
+    height: 80px;
     z-index: 10;
     display:flex;
     justify-content: space-between !important;
@@ -52,4 +52,13 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+ 
+.menuButton{
+    margin: 3px !important;
+    border-radius: 10% !important;
+}
+.menuButton:hover{
+    transition:.4s;
+    background-color: rgba(212, 187, 187, 0.322) !important;
 }

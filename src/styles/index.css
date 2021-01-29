@@ -2,6 +2,7 @@ body,html{
   margin:0 !important; 
   padding:0 !important;
 }
+ 
 .bar{
   display:flex;
   justify-content: center;
@@ -146,4 +147,12 @@ img{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: rgb(139, 58, 78);
   font-weight: 600;
+}
+.link{
+  border-radius:20px !important;
+  width: 300px !important;
+  background-color: rgba(238, 238, 238, 0.733) !important;
+}
+.link *{
+  text-decoration:none;
 }
